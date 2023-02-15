@@ -336,6 +336,7 @@ process_n_fold_cross_validation = function(liblinear_dir,
     cv_command = paste0(liblinear_dir,"train -s 2 -C ", train_feature_name," >> cv_log.txt")
     system(cv_command)
     
+    cat("cv_log.txt")
     tmp_5cv_file = readLines("cv_log.txt")
     
     it = tmp_5cv_file[length(tmp_5cv_file)]
